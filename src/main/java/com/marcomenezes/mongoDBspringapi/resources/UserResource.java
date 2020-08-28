@@ -61,4 +61,11 @@ public class UserResource {
 		obj = service.update(obj);
 		return ResponseEntity.noContent().build();
 	}
+	
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
+	public ResponseEntity<UserDTO> findPosts(@PathVariable String id) {
+		User obj = service.findById(id);
+		
+		return ResponseEntity.ok().body(new UserDTO(obj));
+	}
 }
