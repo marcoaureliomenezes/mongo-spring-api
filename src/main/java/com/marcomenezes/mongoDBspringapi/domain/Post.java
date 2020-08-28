@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.marcomenezes.mongoDBspringapi.dto.AuthorDTO;
+import com.marcomenezes.mongoDBspringapi.dto.UserDTO;
 
 
 @Document
@@ -19,6 +20,8 @@ public class Post implements Serializable {
 	private String title;
 	private String body;
 	private AuthorDTO author;
+	
+	
 	public Post() {
 		
 	}
@@ -64,14 +67,14 @@ public class Post implements Serializable {
 		this.body = body;
 	}
 
-	public AuthorDTO getAuthorUser() {
+	public AuthorDTO getAuthor() {
 		return author;
 	}
-	
-	public void setAuthorUser(User authorUser) {
+
+	public void setAuthor(AuthorDTO author) {
 		this.author = author;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
